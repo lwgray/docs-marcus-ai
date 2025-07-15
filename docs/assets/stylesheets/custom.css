@@ -1,0 +1,46 @@
+/* Custom CSS for Marcus AI Documentation */
+
+/* Fix oversized social icons */
+.md-footer-social {
+  margin: 0 !important;
+  padding: 0.6rem 0 !important;
+}
+
+.md-footer-social__link {
+  display: inline-block;
+  width: 2rem !important;
+  height: 2rem !important;
+  margin: 0 0.2rem !important;
+}
+
+.md-footer-social__link svg {
+  max-width: 1.2rem !important;
+  max-height: 1.2rem !important;
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+}
+
+/* Ensure footer social icons are properly sized */
+.md-footer__link--social svg {
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+}
+
+/* Fix any fontawesome brand icons */
+.md-footer .fab,
+.md-footer .fa-brands {
+  font-size: 1.2rem !important;
+}
+
+/* Additional safety for all social icons */
+.md-social__link svg,
+.md-source__icon svg {
+  max-width: 1.5rem !important;
+  max-height: 1.5rem !important;
+}
+
+/* Fix header social/repo icons if needed */
+.md-header__source svg {
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+}
