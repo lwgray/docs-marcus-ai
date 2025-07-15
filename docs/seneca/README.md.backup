@@ -1,0 +1,263 @@
+# Seneca - Real-time Visualization Dashboard
+
+Seneca is the visualization and monitoring dashboard for the Marcus AI ecosystem. It provides real-time insights into agent activities, system performance, and task execution.
+
+## Overview
+
+Seneca transforms complex AI orchestration data into intuitive visualizations, helping you:
+- Monitor agent performance in real-time
+- Track task progress and completion
+- Analyze system metrics and resource usage
+- Identify bottlenecks and optimization opportunities
+- Generate comprehensive reports
+
+## Key Features
+
+### Real-time Monitoring
+- Live agent status updates
+- Task execution timeline
+- System resource utilization
+- Event streaming and notifications
+
+### Interactive Dashboards
+- Customizable widget layouts
+- Drag-and-drop interface
+- Multiple dashboard templates
+- Responsive design for all devices
+
+### Advanced Analytics
+- Historical data analysis
+- Performance trending
+- Predictive insights
+- Anomaly detection
+
+### Integration
+- Seamless Marcus integration
+- WebSocket real-time updates
+- REST API for custom integrations
+- Export capabilities
+
+## Architecture
+
+Seneca is built with modern web technologies:
+- **Frontend**: React with TypeScript
+- **State Management**: Redux Toolkit
+- **UI Components**: Material-UI
+- **Charts**: D3.js and Recharts
+- **Real-time**: WebSocket connections
+- **API**: RESTful endpoints
+
+## Getting Started
+
+### Prerequisites
+- Node.js 16+ and npm
+- Marcus instance running
+- Modern web browser
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/marcus-ai/seneca.git
+cd seneca
+
+# Install dependencies
+npm install
+
+# Configure environment
+cp .env.example .env
+# Edit .env with your Marcus API endpoint
+
+# Start development server
+npm run dev
+```
+
+### Configuration
+
+Create a `.env` file:
+```env
+REACT_APP_API_URL=http://localhost:8000
+REACT_APP_WS_URL=ws://localhost:8000/ws
+REACT_APP_REFRESH_INTERVAL=5000
+```
+
+## Usage
+
+### Accessing the Dashboard
+
+Navigate to `http://localhost:3000` after starting the development server.
+
+### Creating Your First Dashboard
+
+1. Click "New Dashboard"
+2. Choose a template or start blank
+3. Add widgets from the widget library
+4. Configure data sources
+5. Save and share
+
+### Available Widgets
+
+- **Agent Status Card**: Shows agent availability and current tasks
+- **Task Timeline**: Gantt chart of task execution
+- **Performance Metrics**: CPU, memory, and throughput graphs
+- **Log Viewer**: Real-time log streaming
+- **Alert Panel**: System notifications and warnings
+- **Custom Charts**: Build your own visualizations
+
+## Development
+
+### Project Structure
+```
+seneca/
+├── src/
+│   ├── components/     # React components
+│   ├── hooks/         # Custom React hooks
+│   ├── services/      # API services
+│   ├── store/         # Redux store
+│   ├── types/         # TypeScript definitions
+│   └── utils/         # Helper functions
+├── public/            # Static assets
+└── tests/            # Test files
+```
+
+### Building for Production
+
+```bash
+# Create optimized build
+npm run build
+
+# Run production server
+npm run serve
+```
+
+### Testing
+
+```bash
+# Run unit tests
+npm test
+
+# Run e2e tests
+npm run test:e2e
+
+# Generate coverage report
+npm run test:coverage
+```
+
+## API Reference
+
+See [Seneca API Documentation](../api/seneca-api.md) for detailed API information.
+
+### Key Endpoints
+
+- `GET /api/dashboards` - List dashboards
+- `POST /api/dashboards` - Create dashboard
+- `GET /api/widgets/{id}/data` - Get widget data
+- `WS /api/ws` - WebSocket connection
+
+## Deployment
+
+### Docker
+
+```dockerfile
+FROM node:16-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+COPY . .
+RUN npm run build
+EXPOSE 3000
+CMD ["npm", "run", "serve"]
+```
+
+### Kubernetes
+
+See our [Kubernetes deployment guide](deployment.md) for production setups.
+
+### Cloud Platforms
+
+- **Vercel**: One-click deployment
+- **Netlify**: Automatic builds from Git
+- **AWS**: CloudFront + S3 static hosting
+
+## Customization
+
+### Themes
+
+Seneca supports custom themes:
+
+```javascript
+// theme.js
+export const customTheme = {
+  palette: {
+    primary: { main: '#1976d2' },
+    secondary: { main: '#dc004e' },
+  },
+};
+```
+
+### Custom Widgets
+
+Create your own widgets:
+
+```javascript
+// MyCustomWidget.jsx
+export function MyCustomWidget({ data }) {
+  return (
+    <WidgetContainer>
+      <WidgetHeader title="My Widget" />
+      <WidgetBody>
+        {/* Your visualization here */}
+      </WidgetBody>
+    </WidgetContainer>
+  );
+}
+```
+
+## Troubleshooting
+
+### Common Issues
+
+**Connection refused to Marcus API**
+- Verify Marcus is running
+- Check API URL in .env
+- Ensure CORS is configured
+
+**Real-time updates not working**
+- Check WebSocket connection
+- Verify firewall allows WS traffic
+- Review browser console for errors
+
+**Performance issues**
+- Reduce update frequency
+- Limit number of active widgets
+- Enable data aggregation
+
+## Contributing
+
+We welcome contributions! See our [Contributing Guide](../community/contributing.md).
+
+### Development Setup
+
+```bash
+# Fork and clone
+git clone https://github.com/YOUR_USERNAME/seneca.git
+
+# Create feature branch
+git checkout -b feature/amazing-feature
+
+# Make changes and test
+npm test
+
+# Submit PR
+```
+
+## License
+
+Seneca is part of the Marcus AI project and is licensed under the MIT License.
+
+## Support
+
+- **Documentation**: [docs.marcus-ai.dev](https://docs.marcus-ai.dev)
+- **Issues**: [GitHub Issues](https://github.com/marcus-ai/seneca/issues)
+- **Discord**: Join our community
+- **Email**: support@marcus-ai.dev

@@ -55,10 +55,8 @@ nav:
       - MCP Server: marcus/systems/06-mcp-server.md
       - Agent Coordination: marcus/systems/21-agent-coordination.md
       - Visualization System: marcus/systems/05-visualization-system.md
-      - All Systems: marcus/systems/
   - Seneca:
-    - Overview: seneca/README.md
-    - Systems: seneca/systems/
+    - Overview: seneca/index.md
     - Installation: seneca/installation.rst
     - Architecture: seneca/architecture.rst
   - Guides:
@@ -83,6 +81,7 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
       type: iso_date
+      enable_git_follow: false
   - mkdocstrings:
       default_handler: python
       handlers:

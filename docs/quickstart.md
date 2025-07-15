@@ -98,15 +98,15 @@ Behind the scenes, Marcus is:
     
     Build a complete application with AI agents
 
--   :material-api: **[API Reference](marcus/api/README.md)**
+-   :material-api: **[API Reference](api/marcus-api.md)**
     
     Learn about available MCP tools and commands
 
--   :material-head-cog: **[Understanding Marcus](marcus/systems/README.md)**
+-   :material-head-cog: **[Understanding Marcus](marcus/README.md)**
     
     Explore the 32 integrated systems
 
--   :material-chart-line: **[Seneca Visualization](seneca/README.md)**
+-   :material-chart-line: **[Seneca Visualization](seneca/index.md)**
     
     Master the monitoring dashboard
 

@@ -4,7 +4,7 @@ Welcome to Marcus documentation! This hub provides technical resources for devel
 
 ## 📁 **Available Documentation**
 
-### 🔌 **[API Reference](marcus/api/)**
+### 🔌 **[API Reference](api/README.md)**
 Complete MCP (Model Context Protocol) tool documentation:
 - Agent workflow APIs (register, request_next_task, report_progress, etc.)
 - Project management tools (create_project, get_project_status)
@@ -12,7 +12,7 @@ Complete MCP (Model Context Protocol) tool documentation:
 - Integration guides for Claude Code
 - Error handling and troubleshooting
 
-### 🏗️ **[System Architecture](marcus/systems/)**
+### 🏗️ **[System Architecture](systems/README.md)**
 Deep technical documentation for all 32 Marcus systems:
 - **Memory System** - Multi-tier cognitive memory architecture
 - **AI Intelligence Engine** - Hybrid AI decision making
@@ -26,11 +26,11 @@ Deep technical documentation for all 32 Marcus systems:
 
 ## 🎯 **Quick Start**
 
-New to Marcus? Start with the [main README](../README.md) for the 5-minute setup guide.
+New to Marcus? Start with the [Quick Start Guide](../quickstart.md) for the 5-minute setup guide.
 
-Need API help? Check the [API documentation](marcus/api/).
+Need API help? Check the [API documentation](api/README.md).
 
-Want to understand how Marcus works? Explore the [systems documentation](marcus/systems/).
+Want to understand how Marcus works? Explore the [systems documentation](systems/README.md).
 
 ---
 
@@ -38,11 +38,11 @@ Want to understand how Marcus works? Explore the [systems documentation](marcus/
 
 | I want to... | Go to... |
 |---------------|----------|
-| **Set up Marcus** | [Main README](../README.md) |
-| **Use the API** | [API Reference](marcus/api/) |
-| **Understand the architecture** | [Systems Documentation](marcus/systems/) |
-| **Extend Marcus** | [API Reference](marcus/api/) + relevant [System Docs](marcus/systems/) |
-| **Troubleshoot issues** | [API Reference](marcus/api/) + [Main README](../README.md) |
+| **Set up Marcus** | [Quick Start Guide](../quickstart.md) |
+| **Use the API** | [API Reference](api/README.md) |
+| **Understand the architecture** | [Systems Documentation](systems/README.md) |
+| **Extend Marcus** | [API Reference](api/README.md) + relevant [System Docs](systems/README.md) |
+| **Troubleshoot issues** | [Troubleshooting Guide](../guides/troubleshooting.md) |
 
 ---
 

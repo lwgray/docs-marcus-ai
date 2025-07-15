@@ -26,7 +26,7 @@ Welcome to the Marcus AI documentation. Learn how to orchestrate AI agents for a
 
     Real-time visualization dashboard for monitoring agent workflows
 
-    [:octicons-arrow-right-24: Seneca documentation](seneca/README.md)
+    [:octicons-arrow-right-24: Seneca documentation](seneca/index.md)
 
 -   :material-book-open-variant: **Guides**
 
@@ -92,7 +92,7 @@ predictions = memory.predict_outcomes()
     
     Install Marcus and create your first AI agent workflow
 
--   :material-api: **[API Reference](marcus/api/marcus-api.md)**
+-   :material-api: **[API Reference](api/marcus-api.md)**
     
     Complete reference for the MCP protocol and tools
 

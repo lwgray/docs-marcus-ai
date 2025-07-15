@@ -352,7 +352,7 @@ async def agent_workflow():
 
 ## 🤝 **Contributing to API**
 
-Want to extend the Marcus API? See our [Contributing Guide](../CONTRIBUTING.md) for:
+Want to extend the Marcus API? See our [Contributing Guide](../../community/contributing.md) for:
 
 - Adding new MCP tools
 - Extending context system
