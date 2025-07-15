@@ -6,8 +6,8 @@ repo_name: marcus-ai
 
 theme:
   name: material
-  # logo: assets/logo.png
-  # favicon: assets/favicon.ico
+  logo: assets/logo.png
+  favicon: assets/favicon.png
   palette:
     - scheme: default
       primary: blue grey
