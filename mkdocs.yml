@@ -122,9 +122,6 @@ markdown_extensions:
       toc_depth: 3
 
 extra:
-  analytics:
-    provider: plausible
-    domain: docs.marcus-ai.dev
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/lwgray/marcus
