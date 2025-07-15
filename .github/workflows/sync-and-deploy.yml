@@ -1,0 +1,65 @@
+name: Sync Documentation and Deploy
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  repository_dispatch:
+    types: [docs-updated]
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  sync-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout documentation repo
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        
+    - name: Checkout Marcus repository
+      uses: actions/checkout@v4
+      with:
+        repository: lwgray/marcus
+        path: temp/marcus
+        
+    - name: Checkout Seneca repository  
+      uses: actions/checkout@v4
+      with:
+        repository: lwgray/seneca
+        path: temp/seneca
+        
+    - name: Sync documentation
+      run: |
+        # Copy Marcus docs
+        mkdir -p docs/marcus
+        cp -r temp/marcus/docs/* docs/marcus/ || true
+        
+        # Copy Seneca docs
+        mkdir -p docs/seneca  
+        cp -r temp/seneca/docs/* docs/seneca/ || true
+        
+        # Clean up
+        rm -rf temp/
+        
+    - name: Build documentation
+      run: mkdocs build
+      
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./site
+        cname: docs.marcus-ai.dev

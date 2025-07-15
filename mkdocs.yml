@@ -1,0 +1,141 @@
+site_name: Marcus AI Documentation
+site_url: https://docs.marcus-ai.dev
+site_description: Documentation for Marcus AI agent orchestration platform and ecosystem
+repo_url: https://github.com/lwgray/marcus
+repo_name: marcus-ai
+
+theme:
+  name: material
+  custom_dir: overrides/
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  palette:
+    - scheme: default
+      primary: blue grey
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue grey
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: Source Code Pro
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+    - toc.follow
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Quick Start: quickstart.md
+    - Installation: installation.md
+    - First Project: first-project.md
+  - Marcus:
+    - Overview: marcus/README.md
+    - API Reference: marcus/api/README.md
+    - Systems:
+      - Overview: marcus/systems/README.md
+      - Memory System: marcus/systems/01-memory-system.md
+      - AI Intelligence Engine: marcus/systems/07-ai-intelligence-engine.md
+      - MCP Server: marcus/systems/06-mcp-server.md
+      - Agent Coordination: marcus/systems/21-agent-coordination.md
+      - Visualization System: marcus/systems/05-visualization-system.md
+      - All Systems: marcus/systems/
+  - Seneca:
+    - Overview: seneca/README.md
+    - Systems: seneca/systems/
+    - Installation: seneca/installation.rst
+    - Architecture: seneca/architecture.rst
+  - Guides:
+    - AI Agent Workflows: guides/ai-workflows.md
+    - Marcus + Seneca Integration: guides/integration.md
+    - Production Deployment: guides/production.md
+    - Troubleshooting: guides/troubleshooting.md
+  - API Reference:
+    - MCP Protocol: api/mcp-protocol.md
+    - Marcus API: api/marcus-api.md
+    - Seneca API: api/seneca-api.md
+  - Community:
+    - Contributing: community/contributing.md
+    - Code of Conduct: community/code-of-conduct.md
+    - Support: community/support.md
+
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
+      lang:
+        - en
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: iso_date
+  - social:
+      cards_layout_options:
+        background_color: "#1e1e1e"
+        color: "#ffffff"
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          options:
+            show_source: true
+            show_bases: true
+  - mermaid2:
+      arguments:
+        theme: |
+          ^(JSON.parse(__md_get("__palette").index == 1)) ? 'dark' : 'light'
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+extra:
+  analytics:
+    provider: plausible
+    domain: docs.marcus-ai.dev
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lwgray/marcus
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/marcus-ai
+  version:
+    provider: mike
+    default: latest
