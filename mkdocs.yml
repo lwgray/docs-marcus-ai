@@ -84,10 +84,6 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
       type: iso_date
-  - social:
-      cards_layout_options:
-        background_color: "#1e1e1e"
-        color: "#ffffff"
   - mkdocstrings:
       default_handler: python
       handlers:
@@ -97,8 +93,7 @@ plugins:
             show_bases: true
   - mermaid2:
       arguments:
-        theme: |
-          ^(JSON.parse(__md_get("__palette").index == 1)) ? 'dark' : 'light'
+        theme: 'default'
 
 markdown_extensions:
   - pymdownx.highlight:
